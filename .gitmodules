@@ -2,5 +2,9 @@
   path = src/aladdin
   url = https://github.com/ysshao/aladdin
 [submodule "xenon"]
-	path = sweeps/xenon
-	url = https://github.com/xyzsam/xenon
+  path = sweeps/xenon
+  url = https://github.com/xyzsam/xenon
+[submodule "boat"]
+  path = BOAT
+  url = https://github.com/alan-turing-institute/BOAT
+  branch = bo_simulator
