@@ -4,7 +4,7 @@
 [submodule "xenon"]
   path = sweeps/xenon
   url = https://github.com/xyzsam/xenon
-[submodule "boat"]
+[submodule "BOAT"]
   path = BOAT
   url = https://github.com/alan-turing-institute/BOAT
   branch = bo_simulator
