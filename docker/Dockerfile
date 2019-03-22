@@ -2,6 +2,8 @@ FROM turingboat/gem5-aladdin-boat_base as gem5-aladdin-boat
 LABEL maintainer="Tomas Lazauskas"
 # based on https://github.com/harvard-acc/gem5-aladdin/blob/master/docker/Dockerfile
 
+RUN apt-get install -y scons
+
 # cloning gem5-aladdin-boat develop branch
 RUN git clone https://github.com/alan-turing-institute/gem5-aladdin-boat && \
     cd gem5-aladdin-boat && \
