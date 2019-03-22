@@ -7,4 +7,4 @@
 [submodule "BOAT"]
   path = BOAT
   url = https://github.com/alan-turing-institute/BOAT
-  branch = bo_simulator
+  branch = develop
