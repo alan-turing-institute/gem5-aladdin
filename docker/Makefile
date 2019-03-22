@@ -12,6 +12,9 @@ pull:
 build:
 	docker build . -f Dockerfile -t turingboat/gem5-aladdin-boat:$(n_branch)
 
+base:
+	docker build . -f Dockerfile.base -t turingboat/gem5-aladdin-boat_base
+
 run:
 	docker run -it --rm \
 		--mount source=gem5-aladdin-boat-workspace,target=/workspace \
