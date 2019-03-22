@@ -10,6 +10,9 @@ RUN git clone https://github.com/alan-turing-institute/gem5-aladdin-boat && \
     git submodule init &&  \
     git submodule update
 
+RUN cd /workspace/gem5-aladdin-boat && \
+    scons build/X86/gem5.opt -j8
+
 # updating the enviromental parameter
 ENV ALADDIN_HOME /workspace/gem5-aladdin-boat/src/aladdin
 
@@ -23,7 +26,7 @@ RUN apt-get update; apt-get install -y \
 
 RUN apt-get update; apt-get install -y \
       libblas-dev \
-      libboost-all-dev 
+      libboost-all-dev
 
 # installing dependencies: eigen
 WORKDIR "/var/tmp"
@@ -62,4 +65,3 @@ RUN pip install pyparsing==2.1.10
 ENV BOAT_HOME /workspace/gem5-aladdin/BOAT
 
 WORKDIR /workspace
-
