@@ -65,5 +65,6 @@ RUN pip install numpy
 RUN pip install pyparsing==2.1.10
 
 ENV BOAT_HOME /workspace/gem5-aladdin/BOAT
+ENV PYTHONPATH="$PYTHONPATH:/workspace/gem5-aladdin/BOAT_plus"
 
 WORKDIR /workspace

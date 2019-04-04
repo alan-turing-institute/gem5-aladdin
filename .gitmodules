@@ -8,3 +8,6 @@
   path = BOAT
   url = https://github.com/alan-turing-institute/BOAT
   branch = develop
+[submodule "BOAT_plus"]
+	path = BOAT_plus
+	url = https://github.com/alan-turing-institute/BOAT_plus.git
