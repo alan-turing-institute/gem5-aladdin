@@ -76,9 +76,9 @@ RUN cd /workspace/gem5-aladdin-boat && \
     git checkout develop
 
 RUN cd /workspace/gem5-aladdin-boat && \
-    rm -rf BOAT && \
+    rm -rf BOAT_plus && \
     git clone https://github.com/alan-turing-institute/BOAT_plus && \
-    cd BOAT && \
+    cd BOAT_plus && \
     git fetch && \
     git checkout develop
 
