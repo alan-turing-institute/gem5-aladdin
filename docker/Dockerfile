@@ -69,9 +69,11 @@ ENV PYTHONPATH="$PYTHONPATH:/workspace/gem5-aladdin/BOAT_plus"
 
 # While we are developing the packages keep the following two RUN commands
 RUN cd /workspace/gem5-aladdin-boat/BOAT && \
+    git fetch && \
     git pull
 
 RUN cd /workspace/gem5-aladdin-boat/BOAT_plus && \
+    git fetch && \
     git pull
 
 WORKDIR /workspace
