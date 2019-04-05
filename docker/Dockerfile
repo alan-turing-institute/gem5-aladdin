@@ -68,12 +68,18 @@ ENV BOAT_HOME /workspace/gem5-aladdin/BOAT
 ENV PYTHONPATH="$PYTHONPATH:/workspace/gem5-aladdin/BOAT_plus"
 
 # While we are developing the packages keep the following two RUN commands
-RUN cd /workspace/gem5-aladdin-boat/BOAT && \
+RUN cd /workspace/gem5-aladdin-boat && \
+    rm -rf BOAT && \
+    git clone https://github.com/alan-turing-institute/BOAT && \
+    cd BOAT && \
     git fetch && \
-    git pull
+    git checkout develop
 
-RUN cd /workspace/gem5-aladdin-boat/BOAT_plus && \
+RUN cd /workspace/gem5-aladdin-boat && \
+    rm -rf BOAT && \
+    git clone https://github.com/alan-turing-institute/BOAT_plus && \
+    cd BOAT && \
     git fetch && \
-    git pull
+    git checkout develop
 
 WORKDIR /workspace
