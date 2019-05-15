@@ -64,8 +64,7 @@ RUN cmake ../src; make
 RUN pip install numpy
 RUN pip install pyparsing==2.1.10
 
-ENV BOAT_HOME /workspace/gem5-aladdin/BOAT
-ENV PYTHONPATH="$PYTHONPATH:/workspace/gem5-aladdin/BOAT_plus"
+ENV BOAT_HOME="/workspace/gem5-aladdin/BOAT"
 
 # While we are developing the packages keep the following two RUN commands
 RUN cd /workspace/gem5-aladdin-boat && \
@@ -74,6 +73,8 @@ RUN cd /workspace/gem5-aladdin-boat && \
     cd BOAT && \
     git fetch && \
     git checkout develop
+
+ENV PYTHONPATH="$PYTHONPATH:/workspace/gem5-aladdin/BOAT_plus"
 
 RUN cd /workspace/gem5-aladdin-boat && \
     rm -rf BOAT_plus && \
