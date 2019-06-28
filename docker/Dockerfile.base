@@ -85,20 +85,6 @@ ENV FORCE_CXX11_ABI 1
 
 RUN apt-get install -y scons
 
-# cloning gem5-aladdin-boat develop branch
-RUN git clone https://github.com/alan-turing-institute/gem5-aladdin-boat && \
-    cd gem5-aladdin-boat && \
-    git fetch && \
-    git checkout develop && \
-    git submodule init &&  \
-    git submodule update
-
-RUN cd /workspace/gem5-aladdin-boat && \
-    scons build/X86/gem5.opt -j8
-
-# updating the enviromental parameter
-ENV ALADDIN_HOME /workspace/gem5-aladdin-boat/src/aladdin
-
 # Install BOAT dependencies.
 #   libboost-all-dev probably is an overkill but could be changed later.
 RUN apt-get update; apt-get install -y \
@@ -130,3 +116,17 @@ WORKDIR "/var/tmp/nlopt"
 RUN mkdir build
 WORKDIR "/var/tmp/nlopt/build"
 RUN cmake ..; make; make install
+
+# cloning gem5-aladdin-boat develop branch
+RUN git clone https://github.com/alan-turing-institute/gem5-aladdin-boat && \
+    cd gem5-aladdin-boat && \
+    git fetch && \
+    git checkout develop && \
+    git submodule init aladdin xenon &&  \
+    git submodule update aladdin xenon
+
+RUN cd /workspace/gem5-aladdin-boat && \
+    scons build/X86/gem5.opt -j8
+
+# updating the enviromental parameter
+ENV ALADDIN_HOME /workspace/gem5-aladdin-boat/src/aladdin
